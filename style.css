@@ -1,3 +1,5 @@
+/* Common styles */
+
 :root {
   --gradient-blue-1: #090274;
   --gradient-blue-2: #1000e9;
@@ -18,11 +20,20 @@
   padding: 0;
   box-sizing: border-box;
   transition: all 0.5s ease-out;
+  cursor: default;
 }
 
 body {
   font-family: "Poppins", sans-serif;
 }
+
+/* Divider */
+
+.half-width {
+  width: 50%;
+}
+
+/* Button decoration */
 
 .button {
   text-decoration: none;
@@ -39,6 +50,7 @@ body {
   font-weight: 500;
   font-size: 1.1rem;
   letter-spacing: 1.5px;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -46,9 +58,7 @@ body {
   box-shadow: 0px 0px 10px 0px var(--button-shadow);
 }
 
-.half-width {
-  width: 50%;
-}
+/* Setting Animations */
 
 @keyframes ball-rotation {
   0% {
@@ -62,6 +72,8 @@ body {
   }
 }
 
+/* Header styles */
+
 header {
   background: linear-gradient(
     35deg,
@@ -71,6 +83,8 @@ header {
   color: var(--text-white);
 }
 
+/* Navbar decoration */
+
 nav {
   display: flex;
   align-items: center;
@@ -78,6 +92,7 @@ nav {
   background-color: transparent;
   padding: 0 120px;
   font-size: 1.1rem;
+  height: 12vh;
 }
 
 #nav-desktop {
@@ -100,6 +115,14 @@ nav a {
 .nav-links li {
   list-style: none;
   font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s ease-out all;
+  padding: 20px 0;
+}
+
+.nav-links li:hover {
+  transform: scale(1.1);
+  text-shadow: 5px var(--text-white);
 }
 
 #header-contents {
@@ -145,7 +168,7 @@ nav a {
   transform: translateX(10px);
 }
 
-#header-contents-right:hover #player-image {
+#player-image:hover {
   transform: translateX(-1px);
 }
 #ball-image {
@@ -157,9 +180,13 @@ nav a {
   animation: ball-rotation 1.2s linear 0s infinite normal;
 }
 
+/* Main Section */
+
 main {
   padding: 0 250px;
 }
+
+/* Card Container */
 
 #card-container {
   margin: 70px 0;
@@ -176,6 +203,15 @@ main {
   display: block;
 }
 
+.card:hover {
+  box-shadow: 0 0 10px 5px var(--shadow-grey);
+  transform: translateY(-5px);
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
 .card-image-frame {
   overflow: hidden;
   border-radius: 8px;
@@ -184,9 +220,6 @@ main {
 .card-image {
   width: 100%;
   border-radius: 8px;
-}
-.card-image:hover {
-  transform: scale(1.05);
 }
 
 .card-player-name {
@@ -199,6 +232,8 @@ main {
   line-height: 26px;
   margin-bottom: 20px;
 }
+
+/* Highlights Section */
 
 #highlights-container {
   display: flex;
@@ -214,6 +249,11 @@ main {
   font-weight: 700;
   font-size: 3rem;
 }
+
+#highlights-left h2:hover {
+  color: var(--gradient-blue-2);
+}
+
 #highlights-left p {
   line-height: 2;
   padding-right: 65px;
@@ -237,6 +277,122 @@ main {
 #highlights-right img:hover {
   transform: scale(1.05);
 }
+
+/* Newsletter Section */
+
+#newsletter {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#newsletter h2 {
+  font-size: 3em;
+  text-align: center;
+}
+
+#newsletter h2:hover {
+  color: var(--gradient-blue-2);
+}
+
+#newsletter-input {
+  display: flex;
+  margin: 30px 0;
+}
+
+#newsletter-input input {
+  padding: 10px;
+  font-size: 1.2em;
+  font-family: "Poppins", sans-serif;
+  margin: 0px 20px;
+  width: 500px;
+  outline: none;
+  border: 2px solid var(--gradient-blue-2);
+  border-radius: 5px;
+  box-shadow: 0 0 2px 0 var(--icon-fill-grey);
+  cursor: text;
+}
+
+#newsletter-input input:focus {
+  box-shadow: 0 1px 5px 0 var(--icon-fill-grey);
+}
+
+#newsletter-input button {
+  background: linear-gradient(45deg, var(--color), var(--gradient-blue-2));
+  width: 200px;
+  color: var(--text-white);
+  font-size: 1.2em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#newsletter-input button:hover {
+  transform: translateX(5px);
+}
+
+/* Quotes Section */
+
+#quotes-section {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  padding: 100px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+#quotes-section:hover {
+  box-shadow: 0 0 30px 0 var(--shadow-grey);
+}
+
+#quotes-section:hover .qoute-icon {
+  color: var(--gradient-blue-2);
+}
+#quotes-section:hover > h2 {
+  color: var(--gradient-blue-2);
+}
+#quotes-section:hover > #qoute-text {
+  transform: translateX(2px);
+}
+
+#quotes-section h2 {
+  font-size: 2.2em;
+}
+
+#qoute-text {
+  font-size: 4em;
+  font-weight: 300;
+  text-align: center;
+}
+
+#quote-by {
+  font-size: 1.3em;
+  color: var(--text-grey);
+}
+
+.qoute-icon {
+  font-size: 2em;
+}
+#quote-open {
+  display: block;
+  align-self: flex-start;
+}
+#quote-close {
+  display: block;
+  align-self: flex-end;
+}
+
+/* Footer Section */
 
 footer {
   display: flex;
@@ -291,10 +447,22 @@ footer {
   color: var(--gradient-blue-2);
 }
 
+.icon-background:hover {
+  background-color: var(--gradient-blue-2);
+}
+.icon-background:hover .icon {
+  color: var(--icon-background-grey);
+}
+
 #copyright-text {
   margin: 10px 0;
   letter-spacing: 1.5px;
 }
+
+@media screen and (min-width: 688px) and (max-width: 992px) {
+}
+
+/* Media Query for Mobile Devices */
 
 @media screen and (max-width: 688px) {
   #card-container {
@@ -328,9 +496,9 @@ footer {
   }
   .menu-icon {
     display: inline-block;
-    border: 2px solid var(--text-white);
-    padding: 5px 6px;
-    border-radius: 3px;
+    border: 1.5px solid var(--text-white);
+    padding: 5px 7px;
+    border-radius: 5px;
   }
   .nav-links-container {
     display: none;
@@ -362,7 +530,6 @@ footer {
   #player-image {
     position: absolute;
     width: 329px;
-    /* transform: translateX(10px); */
   }
   #ball-image {
     top: 80px;
@@ -396,6 +563,52 @@ footer {
   #highlights-right img:hover {
     transform: scale(1);
   }
+  #newsletter {
+    height: 50vh;
+  }
+
+  #newsletter h2 {
+    font-size: 2em;
+  }
+  #newsletter-input {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+  }
+  #newsletter-input input {
+    padding: 10px;
+    font-size: 1.1em;
+    font-family: "Poppins", sans-serif;
+    margin: 20px 0px;
+    width: 100%;
+  }
+
+  #newsletter-input button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #quotes-section {
+    height: 90vh;
+    width: 100%;
+    padding: 50px 0;
+    margin-bottom: 50px;
+    border-radius: 10px;
+  }
+
+  #quotes-section h2 {
+    font-size: 2em;
+  }
+  #qoute-text {
+    font-size: 3em;
+    font-weight: 300;
+  }
+  #quote-open {
+    align-self: center;
+  }
+  #quote-close {
+    align-self: center;
+  }
 }
 
 @media screen and (max-width: 380px) {
@@ -408,6 +621,13 @@ footer {
     left: 20px;
     width: 55px;
     animation: ball-rotation 1.2s linear 0s infinite normal;
+  }
+  #football-fantasy p {
+    font-size: 1.5em;
+  }
+  #copyright-text {
+    font-size: 0.9em;
+    letter-spacing: 1px;
   }
 }
 @media screen and (max-width: 350px) {
